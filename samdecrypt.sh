@@ -1,7 +1,7 @@
 #!/bin/bash
 #find your key in fumagician (look for base64)
-#key=8337838b2345aa7662cd902a9731ef52f4506275b57ca7cd9c36b565bf993cd1
-key=8c7ef2b7836d88ca0abd8f2c91d4eeba4f4d71762df745ee341d2bacbc0f86c0
+#key=8337838b2345aa7662cd902a9731ef52f4506275b57ca7cd9c36b565bf993cd1 #key for EMT02B6Q
+key=8c7ef2b7836d88ca0abd8f2c91d4eeba4f4d71762df745ee341d2bacbc0f86c0 #key for 2B2QEXM7
 openssl enc -aes-256-ecb -d -in "$1" -nopad -K "$key" > "${1/.enc/.bintemp}"
 magic=5f696369616e4d41475f402a212e3826
 check=$(xxd -s 0 -l 16 -p "${1/.enc/.bintemp}")
